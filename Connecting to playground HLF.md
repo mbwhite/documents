@@ -19,8 +19,9 @@ In the scenario, like with the Playground, the Business Network Definition is de
 
 ###Steps
 
-0. Assuming that the playground docker images have been started and the deploy has occured by visiting localhost:8080
-1. Look at the running docker images to find the one that deployed the network.
+Assuming that the playground docker images have been started and the deploy has occured by visiting localhost:8080
+
+Look at the running docker images to find the one that deployed the network.
 ```
 $ docker ps
 CONTAINER ID        IMAGE                                                                      COMMAND                  CREATED             STATUS              PORTS                              NAMES
@@ -30,6 +31,7 @@ CONTAINER ID        IMAGE                                                       
 005f66a6c8dc        hyperledger/fabric-membersrvc:x86_64-0.6.1-preview                         "membersrvc"             29 hours ago        Up 2 minutes        0.0.0.0:7054->7054/tcp             carauctionrest_membersrvc_1
 
 ```
+
 The container of interest is the `fabriccomposer/composer-ui` one. Note the Container ID as well for this - it will be used later. (it is possible the id will be different on your system). In a working directory locally issue the following commands to copy files out of this docker container (for this example we're using  `/home/matthew/git-lenny`).
 
 ```
@@ -54,7 +56,7 @@ $ ls -aR
 .  ..  member.admin  
 ```
 
-2. Change to your local `.composer-connection-profiles` directory and create a new connection profile
+Change to your local `.composer-connection-profiles` directory and create a new connection profile
 
 ```
 $ cd ~/.composer-connection-profiles
@@ -62,7 +64,7 @@ $ mkdir playgroundFabric-profile
 $ cd ~/.composer-connection-profiles
 ```
 
-3. Copy the `connection.json` from the profile that was copied out of docker
+Copy the `connection.json` from the profile that was copied out of docker
 
 ```
 cp ~/git-lenny/.composer-connection-profiles/hlfabric/connection.json  .
