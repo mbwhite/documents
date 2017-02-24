@@ -14,7 +14,7 @@ In the scenario, like with the Playground, the Business Network Definition is de
 *Note this is only a solution for current versions - and not anything that would permitted post v1 or in production*
 
 * The 'Admin' Indentity is used in the Playground UI. For testing this could be used but ideally a new participant and indentity should be created. 
-* There are two directories that need to be copied - /home/composer/.composer-connection-profiles and the /home/composer/.composer-credentials directories
+* There are two directories that need to be copied - `/home/composer/.composer-connection-profiles` and the `/home/composer/.composer-credentials` directories
 * Get these files from the Running docker container and copy them to a local temporary directory and make some minor changes to the host and path names
 
 ###Steps
@@ -128,3 +128,6 @@ registries:
 Command completed successfully.
 
 ```
+# Epilogue
+
+*Note this is only a solution for current versions - and not anything that would permitted post v1 or in production*
