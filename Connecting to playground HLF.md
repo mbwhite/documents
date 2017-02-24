@@ -61,7 +61,7 @@ Change to your local `.composer-connection-profiles` directory and create a new 
 ```
 $ cd ~/.composer-connection-profiles
 $ mkdir playgroundFabric-profile
-$ cd ~/.composer-connection-profiles
+$ cd playgroundFabric-profile
 ```
 
 Copy the `connection.json` from the profile that was copied out of docker
