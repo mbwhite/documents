@@ -1,4 +1,4 @@
-/work in progress/
+~work in progress~
 
 # Validation of the the quality of Fabric Composer
 
