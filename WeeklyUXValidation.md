@@ -10,7 +10,7 @@ First impressions and the overall first experience do count. Even if something i
 To run over a weekly set of of User Exerpience centric exploratry testing.
 
 ## Objectives
-Some prescriptive things to chec (see [Standard Verification](#standard-verification] below) - but a degree of explortory testing is good to find out the edge cases etc.
+Some prescriptive things to chec (see [Standard Verification](#standard-verification) - but a degree of explortory testing is good to find out the edge cases etc.
 
 * Is the website instructions still up-to-date? 
 * Do the prereqs still make sense - and can the setup scripts still work?
