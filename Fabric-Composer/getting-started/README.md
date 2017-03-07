@@ -5,7 +5,7 @@ These where generated from Fabric Composer version 0.4.5 on a Ubuntu 16 system.
 
 | Log file       | Notes                                    |
 | -------------  | ---------------------------------------- |
-|chain-code.log   | Logs from the chain code container |
+| [](chain-code.log)   | Logs from the chain code container |
 |docker-ps.log    | Docker containers running after the test |
 |hlf-peer.log     | Logs from the Hyperledger Fabric peer|
 |npm-install.log  | Output from `npm install` |
