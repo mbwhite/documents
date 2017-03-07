@@ -1,0 +1,80 @@
+
+matthew@matthew-VirtualBox: ~/fabric-composer-dev/sample-applications/packages/getting-started[01;32mmatthew@matthew-VirtualBox[00m:[01;34m~/fabric-composer-dev/sample-applications/packages/getting-started[00m$ npm test
+
+> getting-started@1.0.0 test /home/matthew/fabric-composer-dev/sample-applications/packages/getting-started
+> mocha --recursive && npm run bootstrapAssets && npm run listAssets && npm run submitTransaction
+
+
+[0m[0m
+[0m  Default[0m
+[0m    #sample test[0m
+    [32m  ✓[0m[90m should pass[0m
+
+
+[92m [0m[32m 1 passing[0m[90m (7ms)[0m
+
+
+> getting-started@1.0.0 bootstrapAssets /home/matthew/fabric-composer-dev/sample-applications/packages/getting-started
+> node cli.js landregistry bootstrap
+
+[32minfo[39m: [Composer-GettingStarted] Fabric Composer: Getting Started appliation
+[32minfo[39m: [Composer-GettingStarted] Adding default land titles to the asset registry
+[32minfo[39m: [Composer-GettingStarted] LandRegistry:<init> businessNetworkDefinition obtained digitalproperty-network@0.0.1
+[32minfo[39m: [Composer-GettingStarted] LandRegistry:_bootstrapTitles getting asset registry for "net.biz.digitalPropertyNetwork.LandTitle"
+[32minfo[39m: [Composer-GettingStarted] about to get asset registry
+[32minfo[39m: [Composer-GettingStarted] LandRegistry:_bootstrapTitles got asset registry
+[32minfo[39m: [Composer-GettingStarted] LandRegistry:_bootstrapTitles getting factory and adding assets
+[32minfo[39m: [Composer-GettingStarted] LandRegistry:_bootstrapTitles Creating a person
+[32minfo[39m: [Composer-GettingStarted] LandRegistry:_bootstrapTitles Creating a land title#1
+[32minfo[39m: [Composer-GettingStarted] LandRegistry:_bootstrapTitles Creating a land title#2
+[32minfo[39m: [Composer-GettingStarted] LandRegistry:_bootstrapTitles Adding these to the registry
+[32minfo[39m: [Composer-GettingStarted] Default titles added
+[32minfo[39m: [Composer-GettingStarted] Command completed successfully.
+
+> getting-started@1.0.0 listAssets /home/matthew/fabric-composer-dev/sample-applications/packages/getting-started
+> node cli.js landregistry list
+
+[32minfo[39m: [Composer-GettingStarted] Fabric Composer: Getting Started appliation
+[32minfo[39m: [Composer-GettingStarted] LandRegistry:<init> businessNetworkDefinition obtained digitalproperty-network@0.0.1
+[32minfo[39m: [Composer-GettingStarted] listTitles Getting the asset registry
+[32minfo[39m: [Composer-GettingStarted] listTitles Getting all assest from the registry.
+[32minfo[39m: [Composer-GettingStarted] listTitles Current Land Titles
+[32minfo[39m: [Composer-GettingStarted] Titles listed
+[32minfo[39m: [Composer-GettingStarted] 
+[90m┌──────────┬────────────────┬────────────┬─────────┬─────────────────────────────┬─────────┐[39m
+[90m│[39m[31m TitleID  [39m[90m│[39m[31m OwnerID        [39m[90m│[39m[31m First Name [39m[90m│[39m[31m Surname [39m[90m│[39m[31m Description                 [39m[90m│[39m[31m ForSale [39m[90m│[39m
+[90m├──────────┼────────────────┼────────────┼─────────┼─────────────────────────────┼─────────┤[39m
+[90m│[39m LID:1148 [90m│[39m PID:1234567890 [90m│[39m Fred       [90m│[39m Bloggs  [90m│[39m A nice house in the country [90m│[39m No      [90m│[39m
+[90m├──────────┼────────────────┼────────────┼─────────┼─────────────────────────────┼─────────┤[39m
+[90m│[39m LID:6789 [90m│[39m PID:1234567890 [90m│[39m Fred       [90m│[39m Bloggs  [90m│[39m A small flat in the city    [90m│[39m No      [90m│[39m
+[90m└──────────┴────────────────┴────────────┴─────────┴─────────────────────────────┴─────────┘[39m
+[32minfo[39m: [Composer-GettingStarted] Command completed successfully.
+
+> getting-started@1.0.0 submitTransaction /home/matthew/fabric-composer-dev/sample-applications/packages/getting-started
+> node cli.js landregistry submit && node cli.js landregistry list
+
+[32minfo[39m: [Composer-GettingStarted] Fabric Composer: Getting Started appliation
+[32minfo[39m: [Composer-GettingStarted] LandRegistry:<init> businessNetworkDefinition obtained digitalproperty-network@0.0.1
+[32minfo[39m: [Composer-GettingStarted] updateForSale Getting assest from the registry.
+[32minfo[39m: [Composer-GettingStarted] updateForSale Submitting transaction
+[32minfo[39m: [Composer-GettingStarted] Transaction Submitted
+undefined
+[32minfo[39m: [Composer-GettingStarted] Command completed successfully.
+[32minfo[39m: [Composer-GettingStarted] Fabric Composer: Getting Started appliation
+[32minfo[39m: [Composer-GettingStarted] LandRegistry:<init> businessNetworkDefinition obtained digitalproperty-network@0.0.1
+[32minfo[39m: [Composer-GettingStarted] listTitles Getting the asset registry
+[32minfo[39m: [Composer-GettingStarted] listTitles Getting all assest from the registry.
+[32minfo[39m: [Composer-GettingStarted] listTitles Current Land Titles
+[32minfo[39m: [Composer-GettingStarted] Titles listed
+[32minfo[39m: [Composer-GettingStarted] 
+[90m┌──────────┬────────────────┬────────────┬─────────┬─────────────────────────────┬─────────┐[39m
+[90m│[39m[31m TitleID  [39m[90m│[39m[31m OwnerID        [39m[90m│[39m[31m First Name [39m[90m│[39m[31m Surname [39m[90m│[39m[31m Description                 [39m[90m│[39m[31m ForSale [39m[90m│[39m
+[90m├──────────┼────────────────┼────────────┼─────────┼─────────────────────────────┼─────────┤[39m
+[90m│[39m LID:1148 [90m│[39m PID:1234567890 [90m│[39m Fred       [90m│[39m Bloggs  [90m│[39m A nice house in the country [90m│[39m Yes     [90m│[39m
+[90m├──────────┼────────────────┼────────────┼─────────┼─────────────────────────────┼─────────┤[39m
+[90m│[39m LID:6789 [90m│[39m PID:1234567890 [90m│[39m Fred       [90m│[39m Bloggs  [90m│[39m A small flat in the city    [90m│[39m No      [90m│[39m
+[90m└──────────┴────────────────┴────────────┴─────────┴─────────────────────────────┴─────────┘[39m
+[32minfo[39m: [Composer-GettingStarted] Command completed successfully.
+]0;matthew@matthew-VirtualBox: ~/fabric-composer-dev/sample-applications/packages/getting-started[01;32mmatthew@matthew-VirtualBox[00m:[01;34m~/fabric-composer-dev/sample-applications/packages/getting-started[00m$ exit
+
+
