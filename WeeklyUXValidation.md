@@ -4,6 +4,7 @@
  - Running against pre-release webui is easy
  - Pure re-release cmd line is harder as need to make npm pick up the prerelease modules - may need to 'finesse' lerna
  - Get the labs from the Enagement to ensure that we targeting correct areas..
+ - .... 
 
 # Validation of the the quality of Fabric Composer
 
