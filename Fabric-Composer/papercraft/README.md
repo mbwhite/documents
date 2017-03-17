@@ -1,6 +1,6 @@
 Here are some papercraft PDFs for you to build you own blocks from the [Fabric Composer](https://fabric-composer.github.io/) 
 
-!(Block on Keyboard)[https://github.com/mbwhite/documents/blob/master/Fabric-Composer/papercraft/IMG_20170303_090256520.jpg]
+![Block on Keyboard](IMG_20170303_090256520.jpg)
 
 We have the
 
