@@ -1,4 +1,4 @@
-Here are some papercraft PDFs for you to build you own blocks from the [Fabric Composer](https://fabric-composer.github.io/) image used as an [avatar](http://0.gravatar.com/avatar/fedb8d07a58ea967cf2e749c5b7ebcf0).
+Here are some papercraft PDFs for you to build you own blocks from the [Fabric Composer](https://fabric-composer.github.io/) image used as an [[http://0.gravatar.com/avatar/fedb8d07a58ea967cf2e749c5b7ebcf0]]
 
 We have the
 
