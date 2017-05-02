@@ -92,13 +92,13 @@ $ git clone git@github.com:mbwhite/composer-sample-applications
 
 2. Choose which version of Fabric to use. For v0.6
 ```
-$ npm set fabric-dev-servers:fabricversion hlfv0.6
+$ npm set getting-started:fabricversion hlfv0.6
 ```
 
 For v1.0-alpha, there is nothing to as this the default. But to 'unset' the v0.6, or to be explicit use this command
 
 ```
-$ npm set fabric-dev-servers:fabricversion hlfv1
+$ npm set getting-started:fabricversion hlfv1
 ```
 
 *Note: this does not change the application source code or the model, purely the name of the Composer profile to use, and the Fabric's admin indentity*
@@ -106,7 +106,7 @@ $ npm set fabric-dev-servers:fabricversion hlfv1
 3. Setup the dependancies
 ```
 $ cd packages/getting-started
-$ npm intall
+$ npm install
 ```
 
 4. Deploy the business network
