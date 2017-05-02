@@ -8,7 +8,7 @@ There are two version of Hyperledger Fabric : v0.6 and v1.0-alpha.  The default 
 
 1. Clone the `fabric-dev-servers` git repo for the helper scripts to get Fabric running for development use
 ```
-$ git clone git@github.com:mbwhite/fabric-dev-servers.git
+$ git clone https://github.com/mbwhite/fabric-dev-servers.git
 ```
 2. Choose which version of Fabric to use. For v0.6
 ```
@@ -93,7 +93,7 @@ This diagram should to clarify the order in which the scripts can be run.  Remem
 
 1. Clone the sample application
 ```
-$ git clone git@github.com:mbwhite/composer-sample-applications
+$ git clone https://github.com/mbwhite/composer-sample-applications
 ```
 
 2. Choose which version of Fabric to use. For v0.6
