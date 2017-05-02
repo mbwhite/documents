@@ -78,8 +78,14 @@ Note: this removes the Composer profile for the currently specific version of th
 A useful information node.js script has been created to show the currently set versions and also to list running docker containers. 
 ```
 $ node info.js
-
 ```
+
+### Command Ordering
+
+This diagram should to clarify the order in which the scripts can be run.  Remember the version will default to hlfv1 if the version command is not run. 
+
+![](CmdOrder.png).
+
 
 # Step 2: Getting the Composer sample application
 
