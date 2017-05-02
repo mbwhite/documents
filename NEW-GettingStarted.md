@@ -72,3 +72,56 @@ $ ./teardown.sh
 $ npm run teardown
 ```
 Note: this removes the Composer profile for the currently specific version of the Fabric
+
+
+### Information
+A useful information node.js script has been created to show the currently set versions and also to list running docker containers. 
+```
+$ node info.js
+
+```
+
+# Step 2: Getting the Composer sample application
+
+0. Make sure you've started Fabric as in Step 1!
+
+1. Clone the sample application
+```
+$ git clone git@github.com:mbwhite/composer-sample-applications
+```
+
+2. Choose which version of Fabric to use. For v0.6
+```
+$ npm set fabric-dev-servers:fabricversion hlfv0.6
+```
+
+For v1.0-alpha, there is nothing to as this the default. But to 'unset' the v0.6, or to be explicit use this command
+
+```
+$ npm set fabric-dev-servers:fabricversion hlfv1
+```
+
+*Note: this does not change the application source code or the model, purely the name of the Composer profile to use, and the Fabric's admin indentity*
+
+3. Setup the dependancies
+```
+$ cd packages/getting-started
+$ npm intall
+```
+
+4. Deploy the business network
+
+```
+$ npm run deployNetwork
+```
+
+5. Run the sample application 
+```
+$ npm test
+```
+
+# Step 3: And next
+To recap, a fabric has been started, and the Composer framework has been deployed to the Fabric, along with a sample business network. 
+An application that uses this network has been run.
+
+... that's it. 
