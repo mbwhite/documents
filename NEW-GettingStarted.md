@@ -73,13 +73,6 @@ $ npm run teardown
 ```
 Note: this removes the Composer profile for the currently specific version of the Fabric
 
-
-### Information
-A useful information node.js script has been created to show the currently set versions and also to list running docker containers. 
-```
-$ node info.js
-```
-
 ### Command Ordering
 
 This diagram should to clarify the order in which the scripts can be run.  Remember the version will default to hlfv1 if the version command is not run. 
@@ -130,4 +123,10 @@ $ npm test
 To recap, a fabric has been started, and the Composer framework has been deployed to the Fabric, along with a sample business network. 
 An application that uses this network has been run.
 
-... that's it. 
+## Troubleshooting 
+A useful information node.js script has been created to show the currently set versions and also to list running docker containers. 
+```
+$ node info.js
+```
+
+
