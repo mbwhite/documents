@@ -6,9 +6,13 @@ There are two version of Hyperledger Fabric : v0.6 and v1.0-alpha.  The default 
 
 ## Step 1: Getting Hyperledger Fabric running
 
-1. Clone the `fabric-dev-servers` git repo for the helper scripts to get Fabric running for development use
+These scripts use Node v6, npm v4 and bash.  Fpr Hyperledger Composer, these are required dependencies.
+
+1. In a directory of your choice (will assume ~/githuib) , clone the `fabric-dev-servers` git repo for the helper scripts to get Fabric running for development use
 ```
+$ cd ~/github
 $ git clone https://github.com/mbwhite/fabric-dev-servers.git
+$ cd fabric-dev-servers
 ```
 2. Choose which version of Fabric to use. For v0.6
 ```
@@ -84,9 +88,11 @@ This diagram should to clarify the order in which the scripts can be run.  Remem
 
 0. Make sure you've started Fabric as in Step 1!
 
-1. Clone the sample application
+1. Clone the sample application into a directory of your choice - BUT not the same directory as in Step1. 
 ```
+$ cd ~/github
 $ git clone https://github.com/mbwhite/composer-sample-applications
+$ cd composer-sample-applications
 ```
 
 2. Choose which version of Fabric to use. For v0.6
