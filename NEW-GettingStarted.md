@@ -102,36 +102,29 @@ This diagram should to clarify the order in which the scripts can be run.  Remem
 $ cd ~/github
 $ git clone https://github.com/mbwhite/composer-sample-applications
 $ cd composer-sample-applications
+$ npm install
 ```
 
-2. Choose which version of Fabric to use. For v0.6
-```
-$ npm set getting-started:fabricversion hlfv0.6
-```
-
-For v1.0-alpha, there is nothing to as this the default. But to 'unset' the v0.6, or to be explicit use this command
-
-```
-$ npm set getting-started:fabricversion hlfv1
-```
+2. Choose which version of Fabric to use. For v0.6 you will need to suffix the targets in the npm commands below with :hlfv06
 
 *Note: this does not change the application source code or the model, purely the name of the Composer profile to use, and the Fabric's admin indentity*
 
 3. Setup the dependancies
 ```
-$ cd packages/getting-started
-$ npm install
+$ cd getting-started
 ```
 
 4. Deploy the business network
 
 ```
 $ npm run deployNetwork
+$ npm run deployNetwork:hlfv0.6
 ```
 
 5. Run the sample application 
 ```
 $ npm test
+$ npm test:hlfv0.6
 ```
 
 # Step 3: And next
