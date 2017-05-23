@@ -8,26 +8,28 @@ There are two version of Hyperledger Fabric : v0.6 and v1.0-alpha.  The default 
 
 These scripts use Node v6, and bash, which are Hyperledger Composer depencies. Choose a directory that you wish to have the setup scripts within. 
 
-1. In a directory of your choice (will assume ~/tools) get the zip file that contains the tools
+1. In a directory of your choice (will assume `~/tools`) get the zip file that contains the tools
 ```
 $ mkdir ~/tools && cd ~/tools
 $ curl -O https://raw.githubusercontent.com/mbwhite/composer-tools/master/fabric-dev-servers/fabric-dev-servers.zip
 $ unzip fabric-dev-servers.zip
 ```
 
-2. Choose which version of Fabric to use. For v0.6
+_note to developers script has been written for this need to add the repo to travis_
+
+2. Choose which version of Fabric to use. For v0.6 this needs to be set explicitly as follows.
 
 ```
 $ export FABRIC_VERSION=hlfv0.6
 ```
 
-For v1.0-alpha, there is nothing to as this the default. But to 'unset' the v0.6, or to be explicit use this command
+For v1.0-alpha, there is *nothing to as this the default*. But to 'unset' the v0.6, or to be explicit in using v1 use this command
 
 ```
 $ export FABRIC_VERSION=hlfv1
 ```
 
-3. If this is the first time, you'll need to download the fabric, start the fabric, and create a Composer profile.  After that you can then choose to either stop the fabric, and start it again later. Alternatively to completely clean up you can teardown the Fabric and the Composer profile.
+3. If this is the first time, you'll need to download the fabric first. If you have already downloaded then first start the fabric, and create a Composer profile.  After that you can then choose to stop the fabric, and start it again later. Alternatively to completely clean up you can teardown the Fabric and the Composer profile.
 
 All the scritps will be in the directory `~/tools/fabric-dev-servcers`  A typical sequence  for Hyperledger Composer use would be
 
@@ -43,10 +45,12 @@ Then at the end of your development session
 ```
 $ cd ~/tools/fabric-dev-servers
 $ ./stopFabric.sh
-$ ./teardownFabric.sh
+$ ./stopFabric.sh
 ```
 
-*If you want to swap between v0.6 and v1.0, ensure you have issued a STOP and a TEARDOWN command first be START on the other version*
+*If you want to swap between v0.6 and v1.0, ensure you have issued a `stopFabric.sh` and a `teardownFabric.sh` command first be START on the other version*
+
+## Script details
 
 ### Downloading Fabric
 
@@ -93,19 +97,19 @@ This diagram should to clarify the order in which the scripts can be run.  Remem
 ![](CmdOrder.png).
 
 
-# Step 2: Getting the Composer sample application
+# Step 2: Getting the Hyperledger Composer sample application
 
 0. Make sure you've started Fabric as in Step 1!
 
-1. Clone the sample application into a directory of your choice - BUT not the same directory as in Step1. 
+1. Clone the sample application into a directory of your choice - BUT not the same directory as in Step 1. (Assume `~/github')
 ```
-$ cd ~/github
+$ mkdir ~/github && cd ~/github
 $ git clone https://github.com/mbwhite/composer-sample-applications
 $ cd composer-sample-applications
 $ npm install
 ```
 
-2. Choose which version of Fabric to use. For v0.6 you will need to suffix the targets in the npm commands below with :hlfv06
+2. When you started fabric you will have chosen which version to use.  If you have chosen Fabirc v0.6 you will need to suffix the targets in the npm commands below with `:hlfv06`. Both examples are given below - do not issue both commands!
 
 *Note: this does not change the application source code or the model, purely the name of the Composer profile to use, and the Fabric's admin indentity*
 
@@ -118,13 +122,13 @@ $ cd getting-started
 
 ```
 $ npm run deployNetwork
-$ npm run deployNetwork:hlfv0.6
+$ npm run deployNetwork:hlfv0.6     # if you want to use v0.6
 ```
 
 5. Run the sample application 
 ```
 $ npm test
-$ npm test:hlfv0.6
+$ npm test:hlfv0.6     # if you want to use v0.6
 ```
 
 # Step 3: And next
@@ -134,7 +138,7 @@ An application that uses this network has been run.
 ## Troubleshooting 
 A useful information node.js script has been created to show the currently set versions and also to list running docker containers. 
 ```
-$ node info.js
+$ node ~/github/composer-sample-applications/info.js
 ```
 
 
