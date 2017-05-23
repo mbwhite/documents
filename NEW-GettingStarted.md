@@ -8,7 +8,7 @@ There are two version of Hyperledger Fabric : v0.6 and v1.0-alpha.  The default 
 
 These scripts use Node v6, and bash, which are Hyperledger Composer depencies. Choose a directory that you wish to have the setup scripts within. 
 
-1. In a directory of your choice (will assume `~/tools`) get the zip file that contains the tools
+1. In a directory of your choice (will assume `~/fabric-tools`) get the zip file that contains the tools
 ```
 $ mkdir ~/fabric-tools && cd ~/fabric-tools
 $ curl -O https://raw.githubusercontent.com/mbwhite/composer-tools/master/fabric-dev-servers/fabric-dev-servers.zip
@@ -99,7 +99,14 @@ This diagram should to clarify the order in which the scripts can be run.  Remem
 
 # Step 2: Getting the Hyperledger Composer sample application
 
-0. Make sure you've started Fabric as in Step 1!
+0. Make sure you've started Fabric as in Step 1 above. For example, If this is your first time for exaple
+
+```
+$ cd ~/fabric-tools
+$ ./downloadFabric.sh
+$ ./startFabric.sh
+$ ./createComposerProfile.sh
+```
 
 1. Clone the sample application into a directory of your choice - BUT not the same directory as in Step 1. (Assume `~/github')
 ```
@@ -113,14 +120,10 @@ $ npm install
 
 *Note: this does not change the application source code or the model, purely the name of the Composer profile to use, and the Fabric's admin indentity*
 
-3. Setup the dependancies
+3. Deploy the business network
+
 ```
 $ cd getting-started
-```
-
-4. Deploy the business network
-
-```
 $ npm run deployNetwork
 $ npm run deployNetwork:hlfv0.6     # if you want to use v0.6
 ```
