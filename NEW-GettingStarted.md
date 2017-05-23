@@ -10,7 +10,7 @@ These scripts use Node v6, and bash, which are Hyperledger Composer depencies. C
 
 1. In a directory of your choice (will assume `~/tools`) get the zip file that contains the tools
 ```
-$ mkdir ~/tools && cd ~/tools
+$ mkdir ~/fabric-tools && cd ~/fabric-tools
 $ curl -O https://raw.githubusercontent.com/mbwhite/composer-tools/master/fabric-dev-servers/fabric-dev-servers.zip
 $ unzip fabric-dev-servers.zip
 ```
@@ -31,10 +31,10 @@ $ export FABRIC_VERSION=hlfv1
 
 3. If this is the first time, you'll need to download the fabric first. If you have already downloaded then first start the fabric, and create a Composer profile.  After that you can then choose to stop the fabric, and start it again later. Alternatively to completely clean up you can teardown the Fabric and the Composer profile.
 
-All the scritps will be in the directory `~/tools/fabric-dev-servcers`  A typical sequence  for Hyperledger Composer use would be
+All the scritps will be in the directory `~/fabric-tools`  A typical sequence  for Hyperledger Composer use would be
 
 ```
-$ cd ~/tools/fabric-dev-servers
+$ cd ~/fabric-tools
 $ ./downloadFabric.sh
 $ ./startFabric.sh
 $ ./createComposerProfile.sh
@@ -43,7 +43,7 @@ $ ./createComposerProfile.sh
 Then at the end of your development session
 
 ```
-$ cd ~/tools/fabric-dev-servers
+$ cd ~/fabric-tools
 $ ./stopFabric.sh
 $ ./stopFabric.sh
 ```
@@ -54,28 +54,28 @@ $ ./stopFabric.sh
 
 ### Downloading Fabric
 
-Issue from the `fabric-dev-servers` directory
+Issue from the `fabric-tools` directory
 ```
 $ ./downloadFabric.sh
 ```
 
 ### Starting Fabric
 
-Issue  from the `fabric-dev-servers` directory
+Issue  from the `fabric-tools` directory
 ```
 $ ./startFabric.sh
 ```
 
 ### Stop Fabric
 
-Issue from the `fabric-dev-servers` directory
+Issue from the `fabric-tools` directory
 ```
 $ ./stop.sh
 ```
 
 ### Create Composer Profile
 
-Issue from the `fabric-dev-servers` directory
+Issue from the `fabric-tools` directory
 ```
 $ ./createComposerProfile.sh
 ```
@@ -84,7 +84,7 @@ Note: this create a Hyperledger Composer profile specifically to connect to the 
 
 ### Teardown Fabric
 
-Issue from the `fabric-dev-servers` directory
+Issue from the `fabric-tools` directory
 ```
 $ ./teardownFabric.sh
 ```
