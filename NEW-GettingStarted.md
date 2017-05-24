@@ -31,7 +31,7 @@ $ export FABRIC_VERSION=hlfv1
 
 3. If this is the first time, you'll need to download the fabric first. If you have already downloaded then first start the fabric, and create a Composer profile.  After that you can then choose to stop the fabric, and start it again later. Alternatively to completely clean up you can teardown the Fabric and the Composer profile.
 
-All the scritps will be in the directory `~/fabric-tools`  A typical sequence  for Hyperledger Composer use would be
+All the scripts will be in the directory `~/fabric-tools`  A typical sequence  for Hyperledger Composer use would be
 
 ```
 $ cd ~/fabric-tools
@@ -45,7 +45,7 @@ Then at the end of your development session
 ```
 $ cd ~/fabric-tools
 $ ./stopFabric.sh
-$ ./stopFabric.sh
+$ ./teardownFabric.sh
 ```
 
 *If you want to swap between v0.6 and v1.0, ensure you have issued a `stopFabric.sh` and a `teardownFabric.sh` command first be START on the other version*
@@ -139,7 +139,7 @@ To recap, a fabric has been started, and the Composer framework has been deploye
 An application that uses this network has been run.
 
 ## Troubleshooting 
-A useful information node.js script has been created to show the currently set versions and also to list running docker containers. 
+A useful information node.js script has been created to show the available sample applications 
 ```
 $ node ~/github/composer-sample-applications/info.js
 ```
