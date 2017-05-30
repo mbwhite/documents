@@ -122,7 +122,7 @@ $ cd composer-sample-applications
 $ npm install
 ```
 
-1.a To see a summary of all the sample applications, there's a simple command that will show summary details of the applications
+To see a summary of all the sample applications, there's a simple command that will show summary details of the applications
 A useful information node.js script has been created to show the available sample applications 
 ```
 $ node ~/github/composer-sample-applications/info.js
