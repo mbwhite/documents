@@ -146,8 +146,8 @@ You 've been using the Composer Playground on line ![](https://composer-playgrou
 
 This is primarily used an emdedded simulation of a Hyperledger Fabric.  There next step is likely to be prompted by one (or both) of these requirements
 
-	• You want to run the Playground against a real Hyperledger Fabric
-	• You want to run the Playground locally - perhaps to demo, experiment more with offline, or to setup in your own hosting/cloud system for others to uses.
+• You want to run the Playground against a real Hyperledger Fabric
+• You want to run the Playground locally - perhaps to demo, experiment more with offline, or to setup in your own hosting/cloud system for others to uses.
 
 This step will demo how to get a local playground install.  We make a couple of different options available. 
 
@@ -155,8 +155,8 @@ Which options should I choose?
 
 Do I want images that are easy to run in my own cloud provider, or 
 
-	a) Docker images:  great for running in your own cloud provider, or if you have docker installed already. There is a docker image that contains an instance of Hyperledger Fabric
-	b) Standlone plyaground; great for developers as this uses node/npm to run the Playground making it very easy to connect to a localy running fabric. 
+a) Docker images:  great for running in your own cloud provider, or if you have docker installed already. There is a docker image that contains an instance of Hyperledger Fabric
+b) Standlone plyaground; great for developers as this uses node/npm to run the Playground making it very easy to connect to a localy running fabric. 
 
 # 
 1. In a directory of your choice (will assume `~/fabric-tools`) get the zip file that contains the tools
