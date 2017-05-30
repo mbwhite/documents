@@ -11,11 +11,9 @@ These scripts use Node v6, and bash, which are Hyperledger Composer depencies. C
 1. In a directory of your choice (will assume `~/fabric-tools`) get the zip file that contains the tools
 ```
 $ mkdir ~/fabric-tools && cd ~/fabric-tools
-$ curl -O https://raw.githubusercontent.com/mbwhite/composer-tools/master/fabric-dev-servers/fabric-dev-servers.zip
+$ curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.zip
 $ unzip fabric-dev-servers.zip
 ```
-
-_note to developers script has been written for this need to add the repo to travis_
 
 2. Choose which version of Fabric to use. For v0.6 this needs to be set explicitly as follows.
 
@@ -111,7 +109,7 @@ $ ./createComposerProfile.sh
 1. Clone the sample application into a directory of your choice - BUT not the same directory as in Step 1. (Assume `~/github')
 ```
 $ mkdir ~/github && cd ~/github
-$ git clone https://github.com/mbwhite/composer-sample-applications
+$ git clone https://github.com/hyperledger/composer-sample-applications
 $ cd composer-sample-applications
 $ npm install
 ```
@@ -149,63 +147,6 @@ This is primarily used an emdedded simulation of a Hyperledger Fabric.  There ne
 • You want to run the Playground against a real Hyperledger Fabric
 • You want to run the Playground locally - perhaps to demo, experiment more with offline, or to setup in your own hosting/cloud system for others to uses.
 
-This step will demo how to get a local playground install.  We make a couple of different options available. 
+This step will demo how to get a local playground install. 
 
-Which options should I choose?
-
-Do I want images that are easy to run in my own cloud provider, or 
-
-a) Docker images:  great for running in your own cloud provider, or if you have docker installed already. There is a docker image that contains an instance of Hyperledger Fabric
-b) Standlone plyaground; great for developers as this uses node/npm to run the Playground making it very easy to connect to a localy running fabric. 
-
-# 
-1. In a directory of your choice (will assume `~/fabric-tools`) get the zip file that contains the tools
-```
-$ mkdir ~/composer-tools && cd ~/composer-tools
-$ curl -O https://raw.githubusercontent.com/mbwhite/composer-tools/master/composer-playground/composer-playground.zip
-$ unzip composer-playground.zip
-```
-
-2. There is a `downloadPlayground.sh` script that will setup the playground for local use 
-```
-$ ./downloadPlayground.sh
-```
-
-3. Let's start the playground
-```
-$ playground -start
-```
-
-## Connecting to you local fabric.
-
-0. Before we start the playground let's run the DigitalProperty app
-```
-$ CONFIG=playground npm run deployNetwork 
-$ CONFIG=playground npm test
-```
-
-1. Let's get the connection profile for the locally running Fabric. We're going to use one of the composer-cli tools to do this. These are installed in the digitalproperty-app but for future use it's useful to install this globally.
-```
-$ npm install -g composer-cli
-```
-
-2. Let's check the profiles we already have
-```
-$ composer profile list
-```
-
-3. Let's grab the HLFV1 profile
-```
-$ composer profile export -p hlfv1 -d .
-```
-
-4. Playground time
-```
-$ playground start
-```
-
-5. .......
-
-
-
-
+.. to be continued...
