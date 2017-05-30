@@ -178,7 +178,34 @@ $ playground -start
 
 ## Connecting to you local fabric.
 
-## Docker images
+0. Before we start the playground let's run the DigitalProperty app
+```
+$ CONFIG=playground npm run deployNetwork 
+$ CONFIG=playground npm test
+```
+
+1. Let's get the connection profile for the locally running Fabric. We're going to use one of the composer-cli tools to do this. These are installed in the digitalproperty-app but for future use it's useful to install this globally.
+```
+$ npm install -g composer-cli
+```
+
+2. Let's check the profiles we already have
+```
+$ composer profile list
+```
+
+3. Let's grab the HLFV1 profile
+```
+$ composer profile export -p hlfv1 -d .
+```
+
+4. Playground time
+```
+$ playground start
+```
+
+5. .......
+
 
 
 
