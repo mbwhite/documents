@@ -142,7 +142,7 @@ $ npm test:hlfv0.6     # if you want to use v0.6
 
 # Step 3: Running a local copy of the playground
 
-You 've been using the Composer Playground on line ![](https://composer-playground.mybluemix.net/)
+You 've been using the [Composer Playground online](https://composer-playground.mybluemix.net/)
 
 This is primarily used an emdedded simulation of a Hyperledger Fabric.  There next step is likely to be prompted by one (or both) of these requirements
 
