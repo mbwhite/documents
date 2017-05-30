@@ -116,6 +116,12 @@ $ cd composer-sample-applications
 $ npm install
 ```
 
+1.a To see a summary of all the sample applications, there's a simple command that will show summary details of the applications
+A useful information node.js script has been created to show the available sample applications 
+```
+$ node ~/github/composer-sample-applications/info.js
+```
+
 2. When you started fabric you will have chosen which version to use.  If you have chosen Fabirc v0.6 you will need to suffix the targets in the npm commands below with `:hlfv06`. Both examples are given below - do not issue both commands!
 
 *Note: this does not change the application source code or the model, purely the name of the Composer profile to use, and the Fabric's admin indentity*
@@ -123,7 +129,7 @@ $ npm install
 3. Deploy the business network
 
 ```
-$ cd getting-started
+$ cd packages/digitalproperty-app
 $ npm run deployNetwork
 $ npm run deployNetwork:hlfv0.6     # if you want to use v0.6
 ```
@@ -134,15 +140,45 @@ $ npm test
 $ npm test:hlfv0.6     # if you want to use v0.6
 ```
 
-# Step 3: And next
-To recap, a fabric has been started, and the Composer framework has been deployed to the Fabric, along with a sample business network. 
-An application that uses this network has been run.
+# Step 3: Running a local copy of the playground
 
-## Troubleshooting 
-A useful information node.js script has been created to show the available sample applications 
+You 've been using the Composer Playground on line ![](https://composer-playground.mybluemix.net/)
+
+This is primarily used an emdedded simulation of a Hyperledger Fabric.  There next step is likely to be prompted by one (or both) of these requirements
+
+	• You want to run the Playground against a real Hyperledger Fabric
+	• You want to run the Playground locally - perhaps to demo, experiment more with offline, or to setup in your own hosting/cloud system for others to uses.
+
+This step will demo how to get a local playground install.  We make a couple of different options available. 
+
+Which options should I choose?
+
+Do I want images that are easy to run in my own cloud provider, or 
+
+	a) Docker images:  great for running in your own cloud provider, or if you have docker installed already. There is a docker image that contains an instance of Hyperledger Fabric
+	b) Standlone plyaground; great for developers as this uses node/npm to run the Playground making it very easy to connect to a localy running fabric. 
+
+# 
+1. In a directory of your choice (will assume `~/fabric-tools`) get the zip file that contains the tools
 ```
-$ node ~/github/composer-sample-applications/info.js
+$ mkdir ~/composer-tools && cd ~/composer-tools
+$ curl -O https://raw.githubusercontent.com/mbwhite/composer-tools/master/composer-playground/composer-playground.zip
+$ unzip composer-playground.zip
 ```
+
+2. There is a `downloadPlayground.sh` script that will setup the playground for local use 
+```
+$ ./downloadPlayground.sh
+```
+
+3. Let's start the playground
+```
+$ playground -start
+```
+
+## Connecting to you local fabric.
+
+## Docker images
 
 
 
