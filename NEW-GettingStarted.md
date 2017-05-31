@@ -155,6 +155,12 @@ This is primarily used an emdedded simulation of a Hyperledger Fabric.  There ne
 • You want to run the Playground against a real Hyperledger Fabric
 • You want to run the Playground locally - perhaps to demo, experiment more with offline, or to setup in your own hosting/cloud system for others to uses.
 
-This step will demo how to get a local playground install. 
+For a complete setup there is a 'single command install' - this uses exclusively Docker technology. Docker and Docker-compose will need to be installed first. 
 
-.. to be continued...
+```
+$ curl -O https://hyperledger.github.io/composer/unstable/composer/install-hlfv1.sh
+$ cat install-hlfv1.sh | bash
+```
+
+This will, download the Hyperledger Fabric and Composer Playground docker images and launch the composer. It will also connect the playground to this. 
+
