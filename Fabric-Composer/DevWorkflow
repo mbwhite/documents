@@ -1,0 +1,9 @@
+
+
+
+```
+$ ./scripts/fabric-scripts/startFabric.sh
+$ gulp deploy
+$ gulp    # to watch the updates to the directories
+```
+
