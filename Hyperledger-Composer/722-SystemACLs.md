@@ -22,15 +22,29 @@ module.exports = SYSTEM_MODEL_FILE;
 Actions that are required - create read update delete
 
 
-Where are they stored?
+##Where are they stored?
 
-Separate file- permissions around this needed.
+Separate file- permissions around this neede who can do what and update etc
 
 
-User hierachy
+##User hierachy
 
 Admin        - can do everthing but deploy a network - PeerAdmin 
 Editor       - can access all the resources but can't modify the system acls
 Creator      - can access submit transactions to create resources
 Subscriber   - can see the data but not modify it
+
+##System 'resources'
+
+Registries (particiaptn, asset, transaction, identitiy)
+Resources - too high level maybe?
+BusinessNetworks themselves
+Queries
+Transactions
+ACLs
+
+## Random notes
+- Default registires - bna creation will require registry access
+
+create some docs based on the engine objects
 
