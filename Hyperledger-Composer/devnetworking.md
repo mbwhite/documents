@@ -19,6 +19,11 @@ If you want to do this now it's the command `curl -sSL https://hyperledger.githu
 4 - Exporting a Network Card form playground is great, until you come to then use it for real
 ```
 $ composer card import --file ~/Downloads/admin.com
+Successfully imported business network card: admin@bond-network
+
+Command succeeded
+
+
 $ composer network list --card admin@bond-network
 >uh-oh..... can't conect 
 ```
