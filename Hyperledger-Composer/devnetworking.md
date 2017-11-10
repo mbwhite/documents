@@ -29,7 +29,9 @@ $ composer network list --card admin@bond-network
 ```
 This is because from your host command line, the `example.com` hosts that are used in docker-composer network - don't mean much from your host system. 
 
-##Edit /etc/hosts so that the exmaple.com host names resolve to localhost
+## Solution
+
+**Edit /etc/hosts so that the exmaple.com host names resolve to localhost**
 
 - Rather than edit by hand, I came across [hostess](https://github.com/cbednarski/hostess) - a simple command line that edits the /etc/hosts
   - Download this from the github repo
