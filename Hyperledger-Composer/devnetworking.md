@@ -1,13 +1,13 @@
 
-I encountered a problem, obvious with hindsight, when using docker-compose.  Several docker containers spun up, all happily talking ot each other on their own network. All happy for me to talk to them from the host Ubuntu system as well.
+I had several docker containers spun up, all happily talking ot each other on their own network. All happy for me to talk to them from the host Ubuntu system as well.  Slight issue of when a configuration is epxorted from one of the docker containers, it was refering to the others by the domain it knew, `example.com` - not so great to use it from the host that knew it via localhost. 
 
-Slight issue of when configuration was epxorted from one of the docker containers, it was refering to the others by the domain it knew, `example.com` - not so great to use it from the host that knew it via localhost. 
-
-Ah I can use sed to reformat the exported data - doable but not that elegant. A much more elegant solution occured to me. Enter the /etc/hosts file
+Ah I can use `sed` to reformat the exported data - doable but not that elegant. A much more elegant solution occured to me. Enter the /etc/hosts file
 
 ## So to recap the scenario...
 
-1 - Installed a [Fabric/Composer](https://hyperledger.github.io/composer/index.html) setup directly from https://hyperledger.github.io/composer/installing/using-playground-locally.html
+We use docker and docker-composer in Composer to setup a basic Fabric system and Composer Playground for developers. Now that we [have Network Cards](https://github.com/hyperledger/composer/releases/tag/v0.15.0) in the runtime and playground there's a problem how do you export a card from Playground to use on the command line? 
+
+1 - Install a [Fabric/Composer](https://hyperledger.github.io/composer/index.html) setup directly from https://hyperledger.github.io/composer/installing/using-playground-locally.html
 
 If you want to do this now it's the command `curl -sSL https://hyperledger.github.io/composer/install-hlfv1.sh | bash`
 
