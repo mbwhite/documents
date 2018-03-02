@@ -12,11 +12,11 @@ And then add in the latest fabric-tools.
 
 ```bash
 $ mkdir fabric-tools
-$ curl -O https://raw.githubusercontent.com/mbwhite/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.zip
+$ curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.zip
 $ unzip -q fabric-dev-servers.zip -d fabric-tools
 $ # you can delete the zip file now if you wish
 ```
-> Note that these are my current versions ahead of the PR going in
+> Note that these have been updated today (2March2018) so please make sure you get the latest copies
 
 Setup up some environment variables to start the 
 ```bash
