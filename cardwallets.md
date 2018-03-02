@@ -184,9 +184,9 @@ We will now import the cards into REDIS that we have created
 Bring up another command window, and install the redis wallet...
 
 ```bash
-$ npm install -g @ampretia/composer-wallet-redis
+$ npm install -g composer-wallet-redis
 $ # that will change at some point to drop the prefix
-$ export NODE_CONFIG='{"composer":{"wallet":{"type": "@ampretia/composer-wallet-redis","desc": "Local redis","options":{}}}}'
+$ export NODE_CONFIG='{"composer":{"wallet":{"type": "composer-wallet-redis","desc": "Local redis","options":{}}}}'
 ```
 
 If you then issue card import commands in this shell, they will use the configuration in redis, not in the filesystem.
