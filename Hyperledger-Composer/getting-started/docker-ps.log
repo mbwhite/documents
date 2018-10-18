@@ -1,4 +1,0 @@
-CONTAINER ID        IMAGE                                                                      COMMAND                  CREATED             STATUS              PORTS                              NAMES
-4e70d70ffa81        dev-vp0-e6c8143bf8268f4fe1fcee4c02e6754588af1ba05b63fc11c1de9cec6703c645   "/opt/gopath/bin/e..."   14 minutes ago      Up 14 minutes                                          dev-vp0-e6c8143bf8268f4fe1fcee4c02e6754588af1ba05b63fc11c1de9cec6703c645
-13d6e4fa2ece        hyperledger/fabric-peer                                                    "sh -c 'sleep 5; p..."   15 minutes ago      Up 15 minutes       0.0.0.0:7050-7053->7050-7053/tcp   scripts_vp0_1
-bfab5cae469a        hyperledger/fabric-membersrvc                                              "membersrvc"             15 minutes ago      Up 15 minutes       0.0.0.0:7054->7054/tcp             scripts_membersrvc_1
