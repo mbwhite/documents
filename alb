@@ -1,0 +1,17 @@
+
+
+
+rsync -zavh --exclude-from=.gitignore $(pwd)/ ../backup/ 
+docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):/workspace --workdir /workspace alb bash
+
+
+https://stackoverflow.com/questions/38675925/is-it-possible-to-install-only-the-docker-cli-and-not-the-daemon
+
+
+
+
+
+https://github.com/mochajs/mocha/pull/1360
+https://github.com/mochajs/mocha/pull/3874
+
+https://www.npmjs.com/package/mocha-multi-reporters

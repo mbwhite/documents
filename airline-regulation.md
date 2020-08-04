@@ -1,0 +1,82 @@
+https://github.com/hyperledger/composer/wiki/Hackathon-Exercise---Planes-and-Parts
+
+https://www.npmjs.com/package/json-rules-engine
+
+https://github.com/j-easy/easy-rules/wiki/shop
+
+namespace org.team3.airline
+
+enum ServiceType {
+  o INSPECT
+  o REPLACE
+  o DESTROY
+  o CREATE
+}
+
+enum PartType {
+  o INTERIOR_NON_CRITICAL
+  o ELECTRONICS
+  o FLIGHT_GUIDANCE
+  o ENGINE
+  o FLAPS
+  o FUSELAGE
+  o WINGS
+  o LANDING_GEAR
+  o TAIL
+}
+
+asset Plane identified by nNumber {
+  o String nNumber
+  --> Part[] parts optional
+}
+
+asset Part identified by partNumber {
+  o String partNumber
+  o Integer condition default=10 range=[0, 10]
+  o PartType type
+  --> Plane plane optional
+  o ServiceLog[] serviceHistroy optional
+}
+
+concept ServiceLog {
+  o String logId
+  o ServiceType type
+  --> Mechanic machanic
+}
+
+participant Mechanic identified by faaMechanicId {
+  o String faaMechanicId
+  o PartType[] certifications optional
+}
+  
+participant Regulator identified by regulatorId {
+  o String regulatorId
+}
+  
+abstract transaction PartTransaction {
+  --> Part part
+  --> Mechanic mechanic
+}
+ 
+transaction AddPartToPlane extends PartTransaction {
+  --> Plane plane
+}
+
+transaction InspectPart extends PartTransaction{
+  o Integer newCondition range=[0,10]
+}
+  
+transaction ReplacePart extends PartTransaction {
+  --> Part newPart
+}
+  
+transaction DestroyPart extends PartTransaction {}
+  
+transaction CreatePart extends PartTransaction {}
+
+transaction SetupDemo {}
+  
+  
+  
+  
+  

@@ -3,6 +3,10 @@
 # 
 
 
+
+
+
+
 new gradle project
 
 add in protobugs
@@ -35,3 +39,29 @@ Documentation is ok, but does leave out quite a few key concepts and ideas.
  - that there are standard types and these need to be copied from 'somewhere' in the github repo
  - the quality of the standard libraries and protoc tool; not well documented or clear
  - fai 
+
+
+### Protobuf v3
+
+Main reference is https://developers.google.com/protocol-buffers/docs/proto3
+The options from proto2 are supported with proto3 we're using those to help refine the various types that are required. 
+
+
+Email to register numbers protobuf-global-extension-registry@google.com
+
+#### Language tooling
+Typescript - to produce the [TS and JS files](https://github.com/improbable-eng/ts-protoc-gen)
+Concerned that some of the options aren't available via that. Needs more investigation.
+
+
+For more information on protobuf options and their implementation -> http://giorgio.azzinna.ro/2017/07/extending-protobuf-custom-options/
+
+OpenAPI / JSONSchema 
+
+- Format additional property of Strings
+https://json-schema.org/understanding-json-schema/reference/string.html#built-in-formats
+
+- OpenAPI additional [formats for numeric values](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md#dataTypeFormat)
+
+Type numbers...
+ https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/type.proto

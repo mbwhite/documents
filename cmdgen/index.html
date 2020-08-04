@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            const ccCmds = function (packagefilename, language, path, label) {
+                var s = `peer lifecycle chaincode package ${packagefilename} --lang ${packagefilename} --path ${path} --label ${label}`;
+                s += `\npeer lifecycle chaincode install ${packagefilename}`;
+
+                return s;
+            }
+
+            const approveForOrg = function (orderer, ordererTLSHostnameOverride, channelid, ccname, ccver, ccsequence) {
+
+                ccsequence = ccsequence | 1;
+                return `peer lifecycle chaincode approveformyorg  --orderer ${orderer} --ordererTLSHostnameOverride ${ordererTLSHostnameOverride} \\
+                                          --channelID ${channelid}  \\
+                                          --name ${ccname}  \\
+                                          -v ${ccver}  \\
+                                          --package-id $PACKAGE_ID \\
+                                          --sequence ${ccsequence}  \\
+                                          --tls  \\
+                                          --cafile $ORDERER_CA
+                                          `;
+            }
+
+
+            $("#cccmds").mouseenter(function () {
+                var filename = $("#packagefilename").val();
+
+                $("#cccmds").text(
+                    ccCmds($("#packagefilename").val(),
+                        $("#cclabel").val(),
+                        $("#cclanguage").val(),
+                        $("#ccpath").val(),
+                        $("#cclabel").val()
+                    )
+                );
+
+            });
+
+            $("#cccmds_approve").mouseenter(function () {
+                var cccmds_approve = approveForOrg($("#orderer").val(), $("#ordererTLSHostnameOverride").val(), $("#channelid").val(), $("#ccname").val(), $("#ccver").val(), $("#ccsequence").val())
+                $("#cccmds_approve").text(cccmds_approve);
+            })
+
+
+        });
+    </script>
+    <style>
+        .textarea {
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Hello World
+            </h1>
+
+            <div id="chaincode" class="section has-background-white-ter">
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Package Filename</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="packagefilename" class="input" type="text" placeholder="packagefilename.tgz">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Label</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="cclabel" class="input" type="text" placeholder="cp_0">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Path</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="ccpath" class="input" type="text" placeholder="./contract">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Language</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="cclanguage" class="input" type="text" placeholder="node">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control">
+                    <textarea id="cccmds" class="textarea" readonly>This content is readonly</textarea>
+                </div>
+
+            </div>
+            <hr />
+
+            <div id="chaincode" class="section has-background-white-ter">
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Orderer Hostname</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="orderer" class="input" type="text" placeholder="localhost:7050">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Orderer TLS Hostname Override </label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="ordererTLSHostnameOverride" class="input" type="text"
+                                    placeholder="order.example.com">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Channel</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="channelid" class="input" type="text" placeholder="mychannel">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">CC Name</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="ccname" class="input" type="text" placeholder="contract">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Sequence</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input id="ccsequence" class="input" type="text" placeholder="1">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control">
+                    <textarea id="cccmds_approve" class="textarea" readonly>This content is readonly</textarea>
+                </div>
+
+            </div>
+
+            <div id="checkCommitReadiness" class="section">
+                <textarea id="cccmds_approve" class="textarea"
+                    readonly>peer lifecycle chaincode checkcommitreadiness --channelID mychannel --name papercontract -v 0 --sequence 1</textarea>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>

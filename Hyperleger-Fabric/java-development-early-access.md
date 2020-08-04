@@ -1,15 +1,14 @@
-
 # Early Access Coffee on the Blockchain  
 
-Supply chains are one great usecase for Blockchain and DLT; tracing coffee beans for example to be able to assert the provence of their origin. 
+Supply chains are one great usecase for Blockchain and DLT; tracing coffee beans to be able to assert the provence of their origin is just one example. 
 It's also a very bad pun to bridge to Java (the language).
 
-Being a long time Java Developer (Java 1.1.3 anybody?) I'm pleased to be able to write this short guide to using Java with the Fabric SmartContract programming model. The updated programming model was first delivered within Hyperledger Fabric in Node.js (JavaScript & TypeScript) alongside a prototype Golang implementation.  
+Being a long time Java Developer (Java 1.1.3 anybody?) I'm pleased to be able to write this short guide to using Java with the Fabric Smart Contract programming model. The updated programming model was first delivered within Hyperledger Fabric in Node.js (JavaScript & TypeScript) alongside a prototype Golang implementation.  
 It is now available for Java developers to use - Smart Contracts AND client applications can now be written using Java 8.
 
-This is all freshly 'brewed' code available in the last couple of weeks - so please handle with care and report back issues. We'll be wanting to 'roast' another batch of JARs very soon to feedback via rocketchat or JIRA Issues is apprecated. 
+This is all freshly 'brewed' code available in the last couple of weeks - so please handle with care and report back issues. We'll be wanting to 'roast' another batch of JARs very soon, so feedback via RocketChat or JIRA Issues is appreciated. 
 
-So put the coffee on (or other beverage to suit) and let's review whats available, (with no more coffee puns). Note that this is an overview of what's available and where, and not fully indepth tutorial. Please treat the Java Contract elements and Gateway SDK as 'beta' - feedback more than welcome. See the links below.
+So put the coffee on (or other beverage to suit) and let's review what's available, (with no more coffee puns). Note that this is an overview of what's available and where, and not fully in-depth tutorial. Please treat the Java Contract elements and Gateway SDK as 'beta' - feedback more than welcome. See the links below.
 
 
 > **TL;DR**  The updated Contract programming model can be written using Java in Hyperledger Fabric!  Please treat the Java Contract elements and Gateway SDK as 'beta' - feedback more than welcome. See the links below.
@@ -35,7 +34,7 @@ dependencies {
 }
 ```
 
-For Applications use these depencies (show here in Maven format, Gradle is fine as well)
+For Applications, use these dependencies (shown here in Maven format, Gradle is fine as well)
 
 ```xml
 	<repositories>
@@ -85,7 +84,7 @@ For Applications use these depencies (show here in Maven format, Gradle is fine 
 
 ### Code Repositories
 
-The main code is held in Gerrit, but is mirrored (readonly) into GitHub. Issues should be raised in JIRA not Github.
+The main code is held in Gerrit, but is mirrored (read-only) into GitHub. Issues should be raised in JIRA not Github.
 
 - [Contract Java](https://github.com/hyperledger/fabric-chaincode-java)
 - [Contract Node.js](https://github.com/hyperledger/fabric-chaincode-node)
@@ -94,13 +93,13 @@ The main code is held in Gerrit, but is mirrored (readonly) into GitHub. Issues 
 
 ### Feedback
 
-Either contact us via [rocketchat](https://chat.hyperledger.org/channel/fabric-chaincode-dev), or via JIRA issues - for example new features ideas can be added under [this Epic](https://jira.hyperledger.org/browse/FAB-14524)
+Either contact us via [RocketChat](https://chat.hyperledger.org/channel/fabric-chaincode-dev), or via JIRA issues - for example new features ideas can be added under [this Epic](https://jira.hyperledger.org/browse/FAB-14524)
 
-## Very Quick recap on the programming model. 
+## Very Quick recap on the programming model
 
-*Contracts* are defined within their own classes, with a variety of methods on them of your choice. A number of these Contracts can be run inside the *Chaincode* container that is managed in Fabric 1.4 by the *Peer*. When a client application (via a SDK) requests a transaction be executed the appropraite method on the approriate contract class will be executred. The resultant read/write set will be processed by the Orderer and Peers before being written to the ledger.
+*Contracts* are defined within their own classes, with a variety of methods on them of your choice. A number of these Contracts can be run inside the *Chaincode* container that is managed in Fabric 1.4 by the *Peer*. When a client application (via a SDK) requests a transaction be executed, the appropriate method on the appropriate contract class will be executed. The resultant read/write set will be processed by the Orderer and Peers before being written to the ledger.
 
-At a high level, then Smart Contracts are written based around 'Contract Classes' with 'Transaction Function' implementations. These are then invoked by the client application. 
+At a high level, Smart Contracts are written based around 'Contract Classes' with 'Transaction Function' implementations. These are then invoked by the client application. 
 
 ## Language and software versions 
 
@@ -123,7 +122,7 @@ This is divided into two folders, firstly let's look in `basic-contract/java-con
   
    A standard gradle build using the 'uber-jar' approach to pull all the dependencies together using the `com.github.johnrengelman.shadow`
    
-   The important depencies are
+   The important dependencies are
 
    ```
        compile group: 'org.hyperledger.fabric-chaincode-java', name: 'fabric-chaincode-shim', version: '1.4.2'
@@ -139,16 +138,16 @@ This is divided into two folders, firstly let's look in `basic-contract/java-con
 
  - Contract source is in the src/main/org/example/, with Test code using Junit 5 is in `src/test/java/org/example/
 
-This is a very simple Smart Contract, with the logic in `MyAssetContract.java` and the asset definition that is being handled in `MyAsset.java`
+This is a very simple Smart Contract, with the logic in `MyAssetContract.java` and the asset definition being handled in `MyAsset.java`.
 
 ### SmartContract Logic
 
-Look in  `MyAssetContract.java`.  A single Contract MUST have the following
+As displayed in `MyAssetContract.java`, a single Contract MUST have the following:
 - A class that implements the `ContractInterface`
 - Two annotations `@Contract(...)` that defines information about the contract, eg license author, etc. and `@Default` that defines this contract as the default should further ones be added later
-- Each class must have at least one transaction function. (it could have none, but wouldn't be very useufl).  These are marked by another annotation `@Transaction`
+- Each class must have at least one transaction function (it could have none, but wouldn't be very useful).  These are marked by another annotation, `@Transaction`
 
-To look briefly at one of these transactions functions.
+To look briefly at one of these transaction functions:
 
 ```Java
     @Transaction()
@@ -165,7 +164,7 @@ There are more functions, for read, create, update etc.
 
 This Smart Contract is adding a very simple asset to the ledger. The asset is represented by a single class in this case, in a format very similar to a Java Bean.
 
-In order for Fabric to handle objects passed to and from the functions, and for interop between say a TypeScript application and Java Contract we need to mark the 'complex' datatypes with an annotation. (Complex in the sense as not being a primitive or String)
+In order for Fabric to handle objects passed to and from the functions, and for interop between say a TypeScript application and Java Contract, we need to mark the complex (non-primitive) datatypes with an annotation:
 ```
 import org.hyperledger.fabric.contract.annotation.DataType;
 
@@ -176,7 +175,7 @@ public class MyAsset {
 
 ```
 
-Each property that is important for storing in the ledger or passing back to the application should be marked with `@Property()`  In this case the asset is very simple with a single String field.
+Each property that is important for storing in the ledger or passing back to the application should be marked with `@Property()`. In this case, the asset is very simple with a single String field:
 
 ```
     @Property()
@@ -184,7 +183,7 @@ Each property that is important for storing in the ledger or passing back to the
 ```
 
 ### Compiling the Java Contract
-At this point you can test the building of the contract
+At this point, you can test the building of the contract:
 
 ```
 ./gradlew build shadowJar
@@ -192,19 +191,19 @@ At this point you can test the building of the contract
 
 ### Application 
 
-If we now look at the Java Application and go through it in a similar manner, the directory is `basic-applications/java-app`
+If we now look at the Java Application and go through it in a similar manner, it can be found in `basic-applications/java-app`
 
-The `build.gradle` file here is similar though is setup to build an application. The exact manner of the build style is up to you, the key elements being the depencies.
+The `build.gradle` file here is similar, though is setup to build an application. The exact manner of the build style is up to you, the key elements being the dependencies.
 
 In this case, 
 ```    
-    dependecies {
+    dependencies {
         ...
         implementation 'org.hyperledger.fabric-gateway-java:fabric-gateway-java:1.4.0-SNAPSHOT'
         ...
     }
 ```
-The application is contained within a single file, `org.example.App.java`; to break this application down to it's important sections.
+The application is contained within a single file, `org.example.App.java`, to break this application down to it's important sections.
 
 Firstly we need to locate a 'wallet', and the 'connection profile' to let the application connect with the correct identity.
 ```
@@ -215,9 +214,9 @@ Firstly we need to locate a 'wallet', and the 'connection profile' to let the ap
     
     Path networkConfigPath = Paths.get(rootDir,"local_fabric_connection.json");
 ```
-We won't cover creating those resources here, the easiest way to get those within a development context is to use the IBM Blockchain Platform VS Code extension.
+We won't cover creating those resources here, the easiest way to get those within a development context is to use the IBM Blockchain Platform VS Code Extension.
 
-Next step is to use a builder pattern to take the configuration information ahead of the first 'connect'
+Next, use a builder pattern to take the configuration information ahead of the first 'connect':
 
 ```
     Gateway.Builder builder = Gateway.createBuilder();
@@ -232,9 +231,9 @@ Next step is to use a builder pattern to take the configuration information ahea
     }
 ```
 
-Using the try-with-resources construct we can connect to the Fabric infrastructure via the builder. The 'admin' here is hard-coded for ease of explanation.
+Using the try-with-resources construct we can connect to the Fabric infrastructure via the builder. The 'admin' identity here is hard-coded for ease of explanation.
 
-Within the try block we can code the invocation of the transaction functions. 
+Within the try block we can code the invocation of the transaction functions:
 
 ```
     // create a gateway connection
@@ -255,9 +254,9 @@ Within the try block we can code the invocation of the transaction functions.
     }
 ```
 
-This code gets the network (defined in the basic development Fabric infrastructures as 'mychannel'), and connects to the Contract named 'MyJavaContract'.  Finally it invokes the 'readMyAsset' transaction function.  
+This code gets the network (defined in the basic development Fabric infrastructure as 'mychannel'), and connects to the Contract named 'MyJavaContract'.  Finally it invokes the 'readMyAsset' transaction function.  
 
-That is the end of the application
+That is the end of the application. 
 
 ## Summary so far
 
@@ -266,18 +265,18 @@ To recap on what's been covered so far, we have a Smart Contract that has been c
 Important points are are that 
 
 - The language of the application need not be the same as the Contract.
-- Either Gradle or Maven can be used as build processes for the Contract
-- Make note of the depenencies that are needed, specifically the `main-class` for the Contract
+- Either Gradle or Maven can be used as build processes for the Contract or Application
+- Make note of the dependencies that are needed, specifically the `main-class` for the Contract
 
 ## Where to go next
-The next step is starting Fabric, installating the Contract and running applications against it. That's the subject of a follow-on document for this repo.
+The next step is starting Fabric, deploying the Contract and running applications against it. That's the subject of a follow-on document for this repo.
 
-The easiest way is to use the [Blockchain Extension](https://marketplace.visualstudio.com/items?itemName=IBMBlockchain.ibm-blockchain-platform) for VS Code
+The easiest way to achieve this is to use the [Blockchain Extension](https://marketplace.visualstudio.com/items?itemName=IBMBlockchain.ibm-blockchain-platform) for VS Code:
 
-  `code --install-extension ibmblockchain.ibm-blockchain-platform`
+```
+  code --install-extension ibmblockchain.ibm-blockchain-platform
+```
 
-This has support for the low level of Java Chaincode, and can therefore be used to work with the higherlevel API. It doesn't as yet have the extra support for Java Contracts that is is has for Node.js
+This currently has support for low level Java Chaincode, and can therefore be used to work with the higher level API.
 
-For a command line approach to driving and install Java Contracts, take a look at the Commercial Paper tutorial and the matching [fabric-samples repo](https://github.com/hyperledger/fabric-samples/tree/release-1.4/commercial-paper).  There's some notes in there about running Java Contracts.   
-
-If you want to use the Commcercial Paper sample - going through the [very detailed Node.js tutorial](https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html) is a good idea first. 
+For a command line approach to driving and installing Java Contracts, take a look at the Commercial Paper tutorial and the matching [fabric-samples repo](https://github.com/hyperledger/fabric-samples/tree/release-1.4/commercial-paper). If you want to use the Commercial Paper sample - going through the [very detailed Node.js tutorial](https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html) is a good idea first.
